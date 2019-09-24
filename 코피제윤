@@ -1,0 +1,76 @@
+import React, {Component} from 'react';
+import {StyleSheet, Text, View, Image} from 'react-native';
+import CustomButton from './CustomButton';
+
+type Props = {};
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <View style={styles.container}>
+        
+        <View style={styles.header}/>
+        <View style={styles.title}>
+          <Text style={{fontSize:35, color:'white'}}> 제윤이가,{'\n'}코피가났어요...</Text>
+        </View>
+        <View style={styles.content}>
+          <Image
+            style={{
+                height: '100%',
+                width: '100%',
+                resize: 'contain'
+              }}
+            source={{uri:'https://user-images.githubusercontent.com/52433798/65490608-6af91b00-dee8-11e9-9b39-5026441a21f8.png'}}/>
+        </View>
+          
+
+        <View style={styles.bottom}>
+          <CustomButton
+           title={'제윤이란?'}
+           buttonColor={'gray'}
+           onPress={()=> alert('나 엄제윤, 코피를 흘리지')}/>
+
+          <CustomButton
+          title={'제작자'}
+          buttonColor={'blue'}
+          onPress={()=> alert('이영민')}/>
+        </View>
+
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor: 'white',
+  },
+
+  header: {
+    width: '100%',
+    height: '9%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:  'black',
+  },
+
+  title: {
+    width: '100%',
+    height: '18%',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    backgroundColor: 'black',
+  },
+
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+
+  bottom: {
+    width:'100%',
+    height:'20%',
+  },
+});
